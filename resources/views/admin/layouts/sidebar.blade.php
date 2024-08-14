@@ -10,14 +10,15 @@
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
                 <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
-                <li><a href=""> <i class="icon-grid"></i>Categories </a></li>
+                <li>
+                  <a href="{{ route('admin.categories.index') }}"> <i class="icon-windows"></i>Categories </a>
+                </li>
                 <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
                 <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
-                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
+                <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"><i class="icon-grid"></i>Categories</a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
-                    <li><a href="#">Page</a></li>
+                    <li><a href="{{ route('admin.categories.index') }}">Category List</a></li>
+                    <li><a href="{{ route('admin.categories.create') }}">Add Category</a></li>
                   </ul>
                 </li>
         </ul><span class="heading">Extras</span>

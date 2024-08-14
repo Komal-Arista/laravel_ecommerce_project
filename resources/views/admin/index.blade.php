@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head> 
-    @include('admin.css')
+    @include('admin.layouts.css')
   </head>
   <body>
-    @include('admin.header')
+    @include('admin.layouts.header')
     <div class="d-flex align-items-stretch">
       <!-- Sidebar Navigation-->
-        @include('admin.sidebar')
+        @include('admin.layouts.sidebar')
       <!-- Sidebar Navigation end-->
       <div class="page-content">
         <div class="page-header">
@@ -15,10 +15,10 @@
             <h2 class="h5 no-margin-bottom">Dashboard</h2>
           </div>
         </div>
-            @include('admin.content')
-            @include('admin.footer')
+            @include('admin.layouts.content')
+            @include('admin.layouts.footer')
       </div>
     </div>
-    @include('admin.javascript')
+    @include('admin.layouts.javascript')
   </body>
 </html>
