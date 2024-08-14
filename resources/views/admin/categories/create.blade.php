@@ -21,7 +21,12 @@
                 @csrf
                     <div class="form-group">
                         <label class="form-control-label">Category Name</label>
-                        <input type="text" placeholder="category Name" name="name" class="form-control">
+                        <input type="text" placeholder="category Name" name="name" {{ old('name') }} class="form-control @error('name') is-invalid @enderror">
+                        <div style="margin-top: 5px;">
+                          @error('name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                          @enderror
+                        </div>
                     </div>
                     <div class="form-group">       
                         <input type="submit" value="Add" class="btn btn-primary">

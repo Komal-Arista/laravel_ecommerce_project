@@ -25,5 +25,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('dashboard', [HomeController::class, 'index']);
         Route::resource('categories', CategoryController::class);
+        Route::group(['as' => 'category.', 'prefix' => 'category'], function () {
+            Route::get('/category_change_status/{category}', [CategoryController::class, 'changeStatus'])->name('changeStatus');
+        });
     });
 });

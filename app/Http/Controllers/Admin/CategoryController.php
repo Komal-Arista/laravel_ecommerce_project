@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Validator;
 use Exception;
 
 class CategoryController extends Controller
@@ -17,7 +18,8 @@ class CategoryController extends Controller
      */
     public function index(): View
     {
-        return view('admin.categories.index');
+        $categoryData = Category::select('*')->orderby('id', 'DESC')->get();
+        return view('admin.categories.index', ['categoryData' => $categoryData]);
     }
 
     /**
@@ -34,7 +36,31 @@ class CategoryController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        return to_route('admin.categories.index');
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:50',
+        ]);
+ 
+        if ($validator->fails()) {
+            return to_route('admin.categories.create')
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+            DB::beginTransaction();
+            try {
+                // Retrieve the validated input...
+                $validated = $validator->validated();
+                Category::create($validated);
+                DB::commit();
+                return redirect()->route('admin.categories.index')->with('success_message', 'Category Created Successfully!');
+            } catch (Exception $e) {
+                DB::rollback();
+                return redirect()->route('admin.category.index')
+                    ->with('error_message', 'Oops!Internal Server Error.Please Try Again Later.');
+            }
+
+        }
+ 
     }
 
     /**
@@ -74,5 +100,10 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function changeStatus(Category $category)
+    {
+        dd($category);
     }
 }
