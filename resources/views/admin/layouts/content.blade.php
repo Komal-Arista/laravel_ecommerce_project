@@ -126,7 +126,7 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="user-block block text-center">
-          <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid">
+          <div class="avatar"><img src="{{ asset('adminsection/img/avatar-1.jpg') }}" alt="..." class="img-fluid">
             <div class="order dashbg-2">1st</div>
           </div><a href="#" class="user-title">
             <h3 class="h5">Richard Nevoreski</h3><span>@richardnevo</span></a>
@@ -171,7 +171,7 @@
       <div class="row d-flex align-items-center">                   
         <div class="col-lg-4 d-flex align-items-center">
           <div class="order">4th</div>
-          <div class="avatar"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid"></div><a href="#" class="name"><strong class="d-block">Tomas Hecktor</strong><span class="d-block">@tomhecktor</span></a>
+          <div class="avatar"> <img src="{{ asset('adminsection/img/avatar-1.jpg') }}" alt="..." class="img-fluid"></div><a href="#" class="name"><strong class="d-block">Tomas Hecktor</strong><span class="d-block">@tomhecktor</span></a>
         </div>
         <div class="col-lg-4 text-center">
           <div class="contributions">410 Contributions</div>
@@ -320,7 +320,7 @@
                 <div class="status away"></div>
               </div>
               <div class="content">   <strong class="d-block">Peter Ramsy</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">7:40am</small></div></a><a href="#" class="message d-flex align-items-center">
-              <div class="profile"><img src="img/avatar-1.jpg" alt="..." class="img-fluid">
+              <div class="profile"><img src="{{ asset('adminsection/img/avatar-1.jpg') }}" alt="..." class="img-fluid">
                 <div class="status busy"></div>
               </div>
               <div class="content">   <strong class="d-block">Sam Kaheil</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">6:55am</small></div></a><a href="#" class="message d-flex align-items-center">
@@ -328,7 +328,7 @@
                 <div class="status offline"></div>
               </div>
               <div class="content">   <strong class="d-block">Sara Wood</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">10:30pm</small></div></a><a href="#" class="message d-flex align-items-center">
-              <div class="profile"><img src="img/avatar-1.jpg" alt="..." class="img-fluid">
+              <div class="profile"><img src="{{ asset('adminsection/img/avatar-1.jpg') }}" alt="..." class="img-fluid">
                 <div class="status online"></div>
               </div>
               <div class="content">   <strong class="d-block">Nader Magdy</strong><span class="d-block">lorem ipsum dolor sit amit</span><small class="date d-block">9:47pm</small></div></a></div>

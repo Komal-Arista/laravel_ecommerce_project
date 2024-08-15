@@ -27,8 +27,14 @@ class CategoryController extends Controller
      */
     public function create(): View
     {
-        $categoryData = '';
-        return view('admin.categories.create', ['categoryData' => $categoryData]);
+        try {
+            $categoryData = '';
+            $categories = Category::select('id', 'name')->get();
+            return view('admin.categories.create', ['categoryData' => $categoryData, 'categories' => $categories]);
+        } catch (Exception $e) {
+            return redirect()->route('admin.categories.index')
+                ->with('error_message', 'Oops!Internal Server Error.Please Try Again Later.');
+        }
     }
 
     /**

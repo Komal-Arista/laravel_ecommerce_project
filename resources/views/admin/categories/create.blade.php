@@ -21,13 +21,34 @@
                 @csrf
                     <div class="form-group">
                         <label class="form-control-label">Category Name</label>
-                        <input type="text" placeholder="category Name" name="name" {{ old('name') }} class="form-control @error('name') is-invalid @enderror">
+                        <input type="text" placeholder="category Name" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror">
                         <div style="margin-top: 5px;">
                           @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                           @enderror
                         </div>
                     </div>
+                    <div class="form-group">
+                      <label class="form-control-label">Category Image</label>
+                      <input type="file" name="image" class="form-control @error('name') is-invalid @enderror"/>
+                      <div style="margin-top: 5px;">
+                        @error('image')
+                          <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label">Parent Category</label>
+                    <select name="parent_id" id="parent_id" class="form-control select2 form-select">
+                      <option value=""> Select Parent Category</option>
+                      @foreach ($categories as $val)
+                          <option value="{{ $val->id }}"
+                              {{ isset($categoryData->parent_id) ? ($categoryData->parent_id == $val->id ? 'selected' : '') : (old('parent_id') == $val->id ? 'selected' : '') }}>
+                              {{ $val->name }}
+                          </option>
+                      @endforeach
+                    </select>
+                  </div>
                     <div class="form-group">       
                         <input type="submit" value="Add" class="btn btn-primary">
                     </div>
@@ -38,4 +59,8 @@
       </div>
   </div>
 </section>
+@endsection
+@section('js')
+{{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
 @endsection
