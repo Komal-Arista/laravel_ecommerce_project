@@ -7,5 +7,3 @@
     <script src="{{ asset('adminsection/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('adminsection/js/charts-home.js') }}"></script>
     <script src="{{ asset('adminsection/js/front.js') }}"></script>
-    <!-- Page JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>

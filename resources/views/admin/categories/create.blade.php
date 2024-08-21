@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                       <label class="form-control-label">Category Image</label>
-                      <input type="file" name="image" class="form-control @error('name') is-invalid @enderror"/>
+                      <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" accept="image/png, image/gif, image/jpeg" />
                       <div style="margin-top: 5px;">
                         @error('image')
                           <div class="alert alert-danger">{{ $message }}</div>
@@ -61,6 +61,14 @@
 </section>
 @endsection
 @section('js')
-{{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
+<script>
+  $(document).ready(function() {
+      $("#parent_id").select2({
+          allowClear: true,
+          width: 'resolve'
+      });
+  });
+</script>
+<!-- Select2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
 @endsection

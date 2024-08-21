@@ -12,7 +12,10 @@ class Category extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name'
+        'name',
+        'image',
+        'parent_id',
+        'status',
     ];
 
     public function getCreatedAtAttribute($value)

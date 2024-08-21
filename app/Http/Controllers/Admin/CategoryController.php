@@ -45,6 +45,7 @@ class CategoryController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:50',
+            'image' => 'nullable|dimensions:max_width=256,max_height=256, min_width:150,min_height=150|mimes:jpeg,png,jpg',
         ]);
  
         if ($validator->fails()) {

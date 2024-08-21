@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('adminsection/css/custom.css') }}">
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{ asset('adminsection/img/favicon.ico') }}">
+    <!-- Select2 CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
